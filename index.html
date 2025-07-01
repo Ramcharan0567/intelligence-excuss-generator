@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Excuse Generator</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Intelligent Excuse Generator</h1>
+  <form method="POST">
+    <label>Scenario:</label>
+    <select name="scenario">
+      <option value="work">Work</option>
+      <option value="school">School</option>
+      <option value="social">Social</option>
+    </select>
+    <label>Urgency:</label>
+    <select name="urgency">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+    <input type="submit" value="Generate Excuse">
+  </form>
+
+  {% if excuse %}
+    <h2>Your Excuse:</h2>
+    <p>{{ excuse }}</p>
+    <h3>Proof:</h3>
+    <img src="{{ proof }}" width="400">
+  {% endif %}
+</body>
+</html>
